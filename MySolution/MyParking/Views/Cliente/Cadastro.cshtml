@@ -1,0 +1,62 @@
+﻿@model MyParking.DAL.Models.Cliente
+@{
+    ViewBag.Title = "Cadastro de Usuário";
+}
+
+@using (Html.BeginForm())
+{    
+   // @Styles.Render("~/Content/Site.css")
+    <section class="container">
+        <div class="cadastro">
+            <h1>Novo Usuário</h1>
+
+            <p>
+                @Html.LabelFor(m => m.NomeCliente)
+                @Html.TextBoxFor(m => m.NomeCliente)
+                @Html.ValidationMessageFor(m => m.NomeCliente)
+            </p>
+
+            <p>
+                @Html.LabelFor(m => m.SobreNome)
+                @Html.TextBoxFor(m => m.SobreNome)
+                @Html.ValidationMessageFor(m => m.SobreNome)
+            </p>
+
+            <p>
+                @Html.LabelFor(m => m.CPF)
+                @Html.TextBoxFor(m => m.CPF)
+                @Html.ValidationMessageFor(m => m.CPF)
+            </p>
+
+            <p>
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email)
+                @Html.ValidationMessageFor(m => m.Email)
+            </p>
+
+            <p>
+                @Html.LabelFor(m => m.Telefone)
+                @Html.TextBoxFor(m => m.Telefone)
+                @Html.ValidationMessageFor(m => m.Telefone)
+            </p>
+
+            <p>
+                @Html.LabelFor(m => m.Endereco)
+                @Html.TextBoxFor(m => m.Endereco)
+                @Html.ValidationMessageFor(m => m.Endereco)
+            </p>
+
+            <p>
+                @Html.LabelFor(m => m.CEP)
+                @Html.TextBoxFor(m => m.CEP)
+                @Html.ValidationMessageFor(m => m.CEP)
+            </p>
+
+            <div>
+                <input type="submit" value="Cadastrar" />
+            </div>
+        </div>
+    </section>
+}
+
+

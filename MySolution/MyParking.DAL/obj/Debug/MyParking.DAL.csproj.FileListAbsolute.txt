@@ -1,0 +1,10 @@
+c:\users\diego\desktop\MySolution\MyParking.DAL\bin\Debug\MyParking.DAL.dll.config
+c:\users\diego\desktop\MySolution\MyParking.DAL\bin\Debug\MyParking.DAL.dll
+c:\users\diego\desktop\MySolution\MyParking.DAL\bin\Debug\MyParking.DAL.pdb
+c:\users\diego\desktop\MySolution\MyParking.DAL\bin\Debug\EntityFramework.dll
+c:\users\diego\desktop\MySolution\MyParking.DAL\bin\Debug\EntityFramework.xml
+c:\users\diego\desktop\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.csprojResolveAssemblyReference.cache
+c:\users\diego\desktop\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.dll
+c:\users\diego\desktop\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.pdb
+c:\users\diego\desktop\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.Migrations.MyParkingDataBase.resources
+c:\users\diego\desktop\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.csproj.GenerateResource.Cache
