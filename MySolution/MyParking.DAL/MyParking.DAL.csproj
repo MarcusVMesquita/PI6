@@ -63,6 +63,12 @@
       <DependentUpon>201503260038090_MyParkingDataBase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyParking.Framework\MyParking.Framework.csproj">
+      <Project>{eb047a3f-e068-432f-8991-8d82d2ad2b85}</Project>
+      <Name>MyParking.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

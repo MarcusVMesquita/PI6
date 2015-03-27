@@ -1,0 +1,4 @@
+C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking.Framework\bin\Debug\MyParking.Framework.dll
+C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking.Framework\bin\Debug\MyParking.Framework.pdb
+C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking.Framework\obj\Debug\MyParking.Framework.dll
+C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking.Framework\obj\Debug\MyParking.Framework.pdb

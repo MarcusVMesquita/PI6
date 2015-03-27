@@ -1,9 +1,0 @@
-c:\users\diego\desktop\MySolution\MyParking.B\bin\Debug\MyParking.B.dll
-c:\users\diego\desktop\MySolution\MyParking.B\bin\Debug\MyParking.B.pdb
-c:\users\diego\desktop\MySolution\MyParking.B\bin\Debug\MyParking.DAL.dll
-c:\users\diego\desktop\MySolution\MyParking.B\bin\Debug\EntityFramework.dll
-c:\users\diego\desktop\MySolution\MyParking.B\bin\Debug\MyParking.DAL.pdb
-c:\users\diego\desktop\MySolution\MyParking.B\bin\Debug\EntityFramework.xml
-c:\users\diego\desktop\MySolution\MyParking.B\obj\Debug\MyParking.BLL.csprojResolveAssemblyReference.cache
-c:\users\diego\desktop\MySolution\MyParking.B\obj\Debug\MyParking.B.dll
-c:\users\diego\desktop\MySolution\MyParking.B\obj\Debug\MyParking.B.pdb

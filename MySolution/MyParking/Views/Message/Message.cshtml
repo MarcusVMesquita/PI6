@@ -1,0 +1,57 @@
+﻿@using MyParking.Framework;
+@model Result
+
+<!DOCTYPE html>
+<!-- 
+ * Markup for jQuery Reveal Plugin 1.0
+ * www.ZURB.com/playground
+ * Copyright 2010, ZURB
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ -->
+	<head>
+		<meta charset="utf-8" />
+		<title>Reveal Demo</title>
+		
+		<!-- Attach our CSS -->
+        @if(@Model.tipoResultado == Result.TipoResult.OK)     
+        {       
+	  	    <link rel="stylesheet" href="/Content/OkMessage.css">	
+        }
+	  	@if(@Model.tipoResultado == Result.TipoResult.Alert)
+        {
+            <link rel="stylesheet" href="/Content/AlertMessage.css">	
+        }
+        @if (@Model.tipoResultado == Result.TipoResult.Error)
+        {
+            <link rel="stylesheet" href="/Content/ErrorMessage.css">	
+        }
+
+		<!-- Attach necessary scripts -->
+		<!-- <script type="text/javascript" src="jquery-1.4.4.min.js"></script> -->
+		<script type="/Scripts/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
+		<script type="/Scripts/javascript" src="jquery.reveal.js"></script>
+		
+		<style type="text/css">
+			body { font-family: "HelveticaNeue","Helvetica-Neue", "Helvetica", "Arial", sans-serif; }
+			.big-link { display:block; margin-top: 100px; text-align: center; font-size: 70px; color: #06f; }
+		</style>		
+	</head>
+	<body>
+        <script>
+
+$(document).ready(function(){
+
+alert('@ViewBag.Message');
+
+});
+
+</script>
+
+		<div id="myModal" class="reveal-modal" data-reveal-id="myModal" data-animation="none">
+			<h1>Reveal Modal Goodness</h1>
+			<p>This is a default modal in all its glory, but any of the styles here can easily be changed in the CSS.</p>
+			<a class="close-reveal-modal">&#215;</a>
+		</div>			
+	</body>
+</html>

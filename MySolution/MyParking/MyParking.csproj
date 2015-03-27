@@ -108,6 +108,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\AlertMessage.css" />
+    <Content Include="Content\ErrorMessage.css" />
+    <Content Include="Content\modal-gloss.png" />
+    <Content Include="Content\OkMessage.css" />
     <Content Include="Content\Site.css" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -120,10 +124,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.reveal.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -146,7 +152,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Cliente\Cadastro.cshtml" />
-    <Content Include="Views\Cliente\Obrigado.cshtml" />
+    <Content Include="Views\Message\Message.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -155,7 +161,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MyParking.B\MyParking.BLL.csproj">
+    <ProjectReference Include="..\MyParking.BLL\MyParking.BLL.csproj">
       <Project>{e9ce901e-5b49-4b2e-b3fd-d815617d7a29}</Project>
       <Name>MyParking.BLL</Name>
     </ProjectReference>
