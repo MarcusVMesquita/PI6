@@ -16,7 +16,7 @@ namespace MyParking
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Cliente", action = "Cadastro", id = UrlParameter.Optional }
+                defaults: new { controller = "Cliente", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

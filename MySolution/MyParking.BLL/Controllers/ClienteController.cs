@@ -15,24 +15,73 @@ namespace MyParking.BLL.Controllers
             service = new ClienteService();
         }
 
-        public ActionResult Cadastro()
+        public ActionResult Index()
+        {
+            return View(service.ClienteToList());
+        }
+
+        public ActionResult Details(int id = 0)
+        {
+            Cliente cliente = service.getCliente(id);
+            if (cliente == null)
+                return HttpNotFound();
+            else
+                return View(cliente);
+        }
+
+        public ActionResult Edit(int id = 0)
+        {
+            Cliente cliente = service.getCliente(id);
+            if (cliente == null)
+                return HttpNotFound();
+            else
+                return View(cliente);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Cliente cliente)
+        {
+            if (ModelState.IsValid)
+            {
+                service.GravaCliente(cliente);
+                return RedirectToAction("Index");
+            }
+            return View(cliente);
+        }
+
+        public ActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Cadastro(Cliente resposta)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Cliente cliente)
         {
-            try
+            if (ModelState.IsValid)
             {
-                Result result = service.GravaCliente(resposta);
+                service.GravaCliente(cliente);
+                return RedirectToAction("Index");
+            }
+            return View(cliente);
+        }
 
-                return RedirectToAction("Message", "Message", new { tipoResultado = result.tipoResultado, mensagem = result.mensagem });//new { mensagem = result.mensagem, tipoResultado = result.tipoResultado });                
-            }
-            catch
-            {
-                return View();
-            }
+        public ActionResult Delete(int id = 0)
+        {
+            Cliente cliente = service.getCliente(id);
+            if (cliente == null)
+                return HttpNotFound();
+            else
+                return View(cliente);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id = 0)
+        {
+            service.DeleteCliente(id);
+            return RedirectToAction("Index");
         }
     }
 }

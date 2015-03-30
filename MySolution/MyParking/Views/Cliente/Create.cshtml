@@ -1,0 +1,82 @@
+﻿@model MyParking.DAL.Models.Cliente
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Cliente</legend>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.NomeCliente)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NomeCliente)
+            @Html.ValidationMessageFor(model => model.NomeCliente)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.SobreNome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SobreNome)
+            @Html.ValidationMessageFor(model => model.SobreNome)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.CPF)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CPF)
+            @Html.ValidationMessageFor(model => model.CPF)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Telefone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Telefone)
+            @Html.ValidationMessageFor(model => model.Telefone)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.CEP)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CEP)
+            @Html.ValidationMessageFor(model => model.CEP)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Endereco)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Endereco)
+            @Html.ValidationMessageFor(model => model.Endereco)
+        </div>
+
+        <p>
+            <input type="submit" value="Salvar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
+

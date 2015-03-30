@@ -18,3 +18,14 @@ C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking.BLL\bin\Debug\MyParking
 C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking.BLL\bin\Debug\EntityFramework.xml
 C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking.BLL\obj\Debug\MyParking.BLL.dll
 C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking.BLL\obj\Debug\MyParking.BLL.pdb
+C:\Users\Diego\Desktop\MySolution\MyParking.BLL\bin\Debug\MyParking.BLL.dll
+C:\Users\Diego\Desktop\MySolution\MyParking.BLL\bin\Debug\MyParking.BLL.pdb
+C:\Users\Diego\Desktop\MySolution\MyParking.BLL\bin\Debug\MyParking.DAL.dll
+C:\Users\Diego\Desktop\MySolution\MyParking.BLL\bin\Debug\MyParking.Framework.dll
+C:\Users\Diego\Desktop\MySolution\MyParking.BLL\bin\Debug\EntityFramework.dll
+C:\Users\Diego\Desktop\MySolution\MyParking.BLL\bin\Debug\MyParking.DAL.pdb
+C:\Users\Diego\Desktop\MySolution\MyParking.BLL\bin\Debug\MyParking.Framework.pdb
+C:\Users\Diego\Desktop\MySolution\MyParking.BLL\bin\Debug\EntityFramework.xml
+C:\Users\Diego\Desktop\MySolution\MyParking.BLL\obj\Debug\MyParking.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Diego\Desktop\MySolution\MyParking.BLL\obj\Debug\MyParking.BLL.dll
+C:\Users\Diego\Desktop\MySolution\MyParking.BLL\obj\Debug\MyParking.BLL.pdb

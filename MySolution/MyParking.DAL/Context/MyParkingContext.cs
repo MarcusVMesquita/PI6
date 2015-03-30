@@ -10,7 +10,7 @@ namespace MyParking.DAL.Context
             : base("MyParkingDatabase")
         { }
 
-        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Cliente> clientes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
