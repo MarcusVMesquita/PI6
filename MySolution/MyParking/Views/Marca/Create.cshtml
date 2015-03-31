@@ -1,0 +1,30 @@
+﻿@model MyParking.DAL.Models.MarcaVeiculo
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Criar Nova Marca de Veículo</h2>
+
+@using (@Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Marca de Veículo</legend>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.NomeMarca)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NomeMarca)
+            @Html.ValidationMessageFor(model => model.NomeMarca)
+        </div>
+        <p>
+            <input type="submit" value="Salvar" />
+        </p>
+    </fieldset>
+}
+
+<div >@Html.ActionLink("Voltar", "Index")</div>

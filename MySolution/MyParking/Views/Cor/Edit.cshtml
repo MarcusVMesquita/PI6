@@ -1,0 +1,32 @@
+﻿@model MyParking.DAL.Models.CorVeiculo
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Editar Cor</h2>
+
+@using (@Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Cor do Veículo</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.corVeiculo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.corVeiculo)
+            @Html.ValidationMessageFor(model => model.corVeiculo)
+        </div>
+        <p>
+            <input type="submit" value="Salvar" />
+        </p>
+    </fieldset>
+}
+
+<div >@Html.ActionLink("Voltar", "Index")</div>

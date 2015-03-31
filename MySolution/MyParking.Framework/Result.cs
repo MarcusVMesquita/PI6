@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace MyParking.Framework
 {
-
-
     public class Result
     {
         public enum TipoResult
@@ -20,6 +18,11 @@ namespace MyParking.Framework
         public string mensagem { get; set; }
         public TipoResult tipoResultado { get; set; }
 
+        public Result(string mensagem, TipoResult tipoResult)
+        {
+            this.mensagem = mensagem;
+            this.tipoResultado = tipoResult;
+        }
 
         public void AdicionaMensagem(string mensagem, TipoResult tipoResultado)
         {

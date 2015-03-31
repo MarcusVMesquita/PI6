@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\CorController.cs" />
+    <Compile Include="Controllers\MarcaController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

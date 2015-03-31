@@ -1,0 +1,28 @@
+﻿@model MyParking.DAL.Models.MarcaVeiculo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Deletar</h2>
+
+<h3>Você tem certeza que quer deletar?</h3>
+<fieldset>
+    <legend>Marca do Veículo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NomeMarca)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NomeMarca)
+    </div>
+
+</fieldset>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Deletar" /> | 
+        @Html.ActionLink("Voltar", "Index")
+    </p>
+}

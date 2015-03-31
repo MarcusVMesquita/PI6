@@ -1,5 +1,7 @@
 ﻿@model MyParking.DAL.Models.Cliente
 
+@using MyParking.DAL.Models
+
 @{
     ViewBag.Title = "Create";
 }
@@ -69,6 +71,31 @@
             @Html.EditorFor(model => model.Endereco)
             @Html.ValidationMessageFor(model => model.Endereco)
         </div>
+
+        <fieldset>
+            <legend>Veículo</legend>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.veiculo.PlacaVeiculo)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.veiculo.PlacaVeiculo)
+                @Html.ValidationMessageFor(model => model.veiculo.PlacaVeiculo)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.veiculo.corVeiculo.corVeiculo)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.veiculo.marcaVeiculo.NomeMarca)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.veiculo.ModeloVeiculo)
+            </div>
+
+        </fieldset>
 
         <p>
             <input type="submit" value="Salvar" />

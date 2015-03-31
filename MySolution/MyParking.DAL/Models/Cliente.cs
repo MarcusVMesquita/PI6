@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyParking.DAL.Models
 {
@@ -44,5 +45,8 @@ namespace MyParking.DAL.Models
         [RegularExpression(@"^(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})$", ErrorMessage = "O telefone deve estar no formato (00) 0000-0000 ou (00) 00000-0000")]
         [DisplayName("Número de Telefone")]
         public string Telefone { get; set; }
+
+        [Required]
+        public virtual Veiculo veiculo { get; set; }
     }
 }

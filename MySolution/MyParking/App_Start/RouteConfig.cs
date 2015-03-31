@@ -17,7 +17,7 @@ namespace MyParking
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Cliente", action = "Index", id = UrlParameter.Optional }
-            );
+           );
         }
     }
 }

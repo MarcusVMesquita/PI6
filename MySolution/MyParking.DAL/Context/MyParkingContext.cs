@@ -11,6 +11,8 @@ namespace MyParking.DAL.Context
         { }
 
         public DbSet<Cliente> clientes { get; set; }
+        public DbSet<MarcaVeiculo> marcaVeiculo { get; set; }
+        public DbSet<CorVeiculo> corVeiculo { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

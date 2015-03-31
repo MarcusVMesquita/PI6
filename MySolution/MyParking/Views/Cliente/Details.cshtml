@@ -58,6 +58,29 @@
         @Html.DisplayFor(model => model.Endereco)
     </div>
 
+    <fieldset>
+        <legend>Veículo</legend>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.veiculo.PlacaVeiculo)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.veiculo.PlacaVeiculo)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.veiculo.corVeiculo)
+        </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.veiculo.marcaVeiculo.NomeMarca)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.veiculo.ModeloVeiculo)
+        </div>
+
+    </fieldset>
+
 </fieldset>
 <p>
     @Html.ActionLink("Editar", "Edit", new { id = Model.ID }) |
