@@ -45,19 +45,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\MyParkingContext.cs" />
-    <Compile Include="Migrations\201503310057458_Database.cs" />
-    <Compile Include="Migrations\201503310057458_Database.Designer.cs">
-      <DependentUpon>201503310057458_Database.cs</DependentUpon>
+    <Compile Include="Migrations\201504012254294_Database.cs" />
+    <Compile Include="Migrations\201504012254294_Database.Designer.cs">
+      <DependentUpon>201504012254294_Database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504012256176_Database1.cs" />
+    <Compile Include="Migrations\201504012256176_Database1.Designer.cs">
+      <DependentUpon>201504012256176_Database1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\CorVeiculo.cs" />
     <Compile Include="Models\MarcaVeiculo.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Veiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ClienteService.cs" />
     <Compile Include="Services\CorService.cs" />
     <Compile Include="Services\MarcaService.cs" />
+    <Compile Include="Services\UsuarioService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -70,8 +76,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201503310057458_Database.resx">
-      <DependentUpon>201503310057458_Database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201504012254294_Database.resx">
+      <DependentUpon>201504012254294_Database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504012256176_Database1.resx">
+      <DependentUpon>201504012256176_Database1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
