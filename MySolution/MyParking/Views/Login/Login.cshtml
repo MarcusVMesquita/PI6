@@ -1,0 +1,53 @@
+﻿@using MyParking.DAL.ViewData
+
+@model UsuarioViewData
+
+@{
+    Layout = "";
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (@Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Login</legend>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Usuario.Login)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Usuario.Login)
+            @Html.ValidationMessageFor(model => model.Usuario.Login)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Usuario.Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Usuario.Password)
+            @Html.ValidationMessageFor(model => model.Usuario.Password)
+        </div>
+        <p>
+            <input type="submit" value="Log in" />
+        </p>
+
+        @if (Model != null)
+        {
+            if (Model.Resultado != null)
+            {
+                if (Model.Resultado.tipoResultado != MyParking.Framework.Result.TipoResult.OK)
+                {
+                    <div class="Mensagem">
+                        @Html.Partial("_Mensagem", Model.Resultado)
+                    </div>
+                }
+            }
+        }
+
+    </fieldset>
+}

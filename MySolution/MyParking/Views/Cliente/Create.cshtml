@@ -1,6 +1,6 @@
-﻿@model MyParking.DAL.Models.Cliente
+﻿@using MyParking.DAL.ViewData
 
-@using MyParking.DAL.Models
+@model ClienteViewData
 
 @{
     ViewBag.Title = "Create";
@@ -17,82 +17,91 @@
         <legend>Cliente</legend>
 
         <div class="display-label">
-            @Html.DisplayNameFor(model => model.NomeCliente)
+            @Html.DisplayNameFor(model => model.Cliente.NomeCliente)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.NomeCliente)
-            @Html.ValidationMessageFor(model => model.NomeCliente)
+            @Html.EditorFor(model => model.Cliente.NomeCliente)
+            @Html.ValidationMessageFor(model => model.Cliente.NomeCliente)
         </div>
 
         <div class="display-label">
-            @Html.DisplayNameFor(model => model.SobreNome)
+            @Html.DisplayNameFor(model => model.Cliente.SobreNome)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.SobreNome)
-            @Html.ValidationMessageFor(model => model.SobreNome)
+            @Html.EditorFor(model => model.Cliente.SobreNome)
+            @Html.ValidationMessageFor(model => model.Cliente.SobreNome)
         </div>
 
         <div class="display-label">
-            @Html.DisplayNameFor(model => model.CPF)
+            @Html.DisplayNameFor(model => model.Cliente.CPF)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.CPF)
-            @Html.ValidationMessageFor(model => model.CPF)
+            @Html.EditorFor(model => model.Cliente.CPF)
+            @Html.ValidationMessageFor(model => model.Cliente.CPF)
         </div>
 
         <div class="display-label">
-            @Html.DisplayNameFor(model => model.Email)
+            @Html.DisplayNameFor(model => model.Cliente.Email)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Email)
-            @Html.ValidationMessageFor(model => model.Email)
+            @Html.EditorFor(model => model.Cliente.Email)
+            @Html.ValidationMessageFor(model => model.Cliente.Email)
         </div>
 
         <div class="display-label">
-            @Html.DisplayNameFor(model => model.Telefone)
+            @Html.DisplayNameFor(model => model.Cliente.Telefone)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Telefone)
-            @Html.ValidationMessageFor(model => model.Telefone)
+            @Html.EditorFor(model => model.Cliente.Telefone)
+            @Html.ValidationMessageFor(model => model.Cliente.Telefone)
         </div>
 
         <div class="display-label">
-            @Html.DisplayNameFor(model => model.CEP)
+            @Html.DisplayNameFor(model => model.Cliente.CEP)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.CEP)
-            @Html.ValidationMessageFor(model => model.CEP)
+            @Html.EditorFor(model => model.Cliente.CEP)
+            @Html.ValidationMessageFor(model => model.Cliente.CEP)
         </div>
 
         <div class="display-label">
-            @Html.DisplayNameFor(model => model.Endereco)
+            @Html.DisplayNameFor(model => model.Cliente.Endereco)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Endereco)
-            @Html.ValidationMessageFor(model => model.Endereco)
+            @Html.EditorFor(model => model.Cliente.Endereco)
+            @Html.ValidationMessageFor(model => model.Cliente.Endereco)
         </div>
 
         <fieldset>
             <legend>Veículo</legend>
 
             <div class="display-label">
-                @Html.DisplayNameFor(model => model.veiculo.PlacaVeiculo)
+                @Html.DisplayNameFor(model => model.Cliente.Veiculo.PlacaVeiculo)
             </div>
             <div class="editor-field">
-                @Html.EditorFor(model => model.veiculo.PlacaVeiculo)
-                @Html.ValidationMessageFor(model => model.veiculo.PlacaVeiculo)
+                @Html.EditorFor(model => model.Cliente.Veiculo.PlacaVeiculo)
+                @Html.ValidationMessageFor(model => model.Cliente.Veiculo.PlacaVeiculo)
             </div>
 
             <div class="display-label">
-                @Html.DisplayNameFor(model => model.veiculo.corVeiculo.corVeiculo)
+                @Html.DisplayNameFor(model => model.Cliente.Veiculo.CorVeiculo.NomeCor)
+            </div>
+            <div>
+                @Html.DropDownListFor(model => model.Cliente.Veiculo.CorID, new SelectList(Model.ItensCor, "id_cor", "NomeCor", Model.ItensCor.First().id_cor), "Selecione")
             </div>
 
             <div class="display-label">
-                @Html.DisplayNameFor(model => model.veiculo.marcaVeiculo.NomeMarca)
+                @Html.DisplayNameFor(model => model.Cliente.Veiculo.MarcaVeiculo.NomeMarca)
+            </div>
+            <div>
+                @Html.DropDownListFor(model => model.Cliente.Veiculo.MarcaID, new SelectList(Model.ItensMarca, "id_marca", "NomeMarca", Model.ItensMarca.First().id_marca), "Selecione")
             </div>
 
             <div class="display-label">
-                @Html.DisplayNameFor(model => model.veiculo.ModeloVeiculo)
+                @Html.DisplayNameFor(model => model.Cliente.Veiculo.ModeloVeiculo)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Cliente.Veiculo.ModeloVeiculo)
             </div>
 
         </fieldset>
@@ -100,6 +109,19 @@
         <p>
             <input type="submit" value="Salvar" />
         </p>
+
+        @if (Model != null)
+        {
+            if (Model.Resultado != null)
+            {
+                if (Model.Resultado.tipoResultado != MyParking.Framework.Result.TipoResult.OK)
+                {
+            <div class="Mensagem">
+                @Html.Partial("_Mensagem", Model.Resultado)
+            </div>
+                }
+            }
+        }
     </fieldset>
 }
 

@@ -27,14 +27,20 @@ namespace MyParking.DAL.Services
         {
             try
             {
-                if (marca.ID != 0) //Editando a marca
+                marca.NomeMarca = Extensions.ProperCase(marca.NomeMarca);
+
+                if (marca.id_marca != 0) //Editando a marca
                     db.Entry(marca).State = EntityState.Modified;
                 else
-                    db.marcaVeiculo.Add(marca);
+                {
+                    if (GetMarcaByName(marca.NomeMarca) != null)
+                        return new Result("Já existe uma marca cadastrada com esse nome.", Result.TipoResult.Alert);
 
+                    db.marcaVeiculo.Add(marca);
+                }
                 db.SaveChanges();
 
-                return new Result("Marca de Veículo Gravado com Sucesso", Result.TipoResult.OK);
+                return new Result("Marca de Veículo Gravado com Sucesso.", Result.TipoResult.OK);
             }
             catch (Exception ex)
             {
@@ -42,7 +48,7 @@ namespace MyParking.DAL.Services
             }
         }
 
-        public MarcaVeiculo getMarca(int id)
+        public MarcaVeiculo GetMarca(int id)
         {
             try
             {
@@ -56,11 +62,38 @@ namespace MyParking.DAL.Services
 
         public Result DeleteMarca(int id)
         {
-            MarcaVeiculo marca = getMarca(id);
-            db.marcaVeiculo.Remove(marca);
-            db.SaveChanges();
+            try
+            {
+                MarcaVeiculo marca = GetMarca(id);
+                db.marcaVeiculo.Remove(marca);
+                db.SaveChanges();
 
-            return new Result("Marca deletada com sucesso", Result.TipoResult.OK);
+                return new Result("Marca deletada com sucesso", Result.TipoResult.OK);
+            }
+            catch (Exception ex)
+            {
+                return new Result("Erro ao deletar a Marca." + "\n" + "Erro: " + ex.Message, Result.TipoResult.Error);
+            }
+        }
+
+        public MarcaVeiculo GetMarcaByName(string Marca)
+        {
+            try
+            {
+                var m = db.marcaVeiculo.Where(model => model.NomeMarca.ToUpper() == Marca.ToUpper());
+
+                if (m.Count() > 0)
+                {
+                    MarcaVeiculo marca = m.First();
+                    return marca;
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
     }
 }

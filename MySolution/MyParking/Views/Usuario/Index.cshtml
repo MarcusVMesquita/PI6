@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Criar um novo Usuário", "Create")
+    @Html.ActionLink("Criar Novo Usuário", "Create")
 </p>
 
 <table>
@@ -15,8 +15,13 @@
         <th>
             @Html.DisplayNameFor(model => model.Nome)
         </th>
+
         <th>
             @Html.DisplayNameFor(model => model.Login)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Administrador)
         </th>
         <th></th>
     </tr>
@@ -30,9 +35,12 @@
                 @Html.DisplayFor(modelItem => item.Login)
             </td>
             <td>
-                @Html.ActionLink("Visualizar", "Details", new {id = item.ID}) | 
-                @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Deletar", "Delete", new { id = item.ID })
+                @Html.DisplayFor(modelItem => item.Administrador)
+            </td>
+
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.id_usuario }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.id_usuario })
             </td>
         </tr>
     }

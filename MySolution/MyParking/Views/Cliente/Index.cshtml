@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Criar novo cliente", "Create")
+    @Html.ActionLink("Criar novo Cliente", "Create")
 </p>
 
 <table>
@@ -22,7 +22,7 @@
             @Html.DisplayNameFor(model => model.Telefone)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.veiculo.PlacaVeiculo)
+            @Html.DisplayNameFor(model => model.Veiculo.PlacaVeiculo)
         </th>
 
         <th></th>
@@ -42,13 +42,13 @@
             </td>
 
             <td>
-                @Html.DisplayFor(modelItem => item.veiculo.PlacaVeiculo)
+                @Html.DisplayFor(modelItem => item.Veiculo.PlacaVeiculo)
             </td>
 
             <td>
-                @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
-            @Html.ActionLink("Detalhar", "Details", new { id = item.ID }) |
-            @Html.ActionLink("Deletar", "Delete", new { id = item.ID })
+                @Html.ActionLink("Editar", "Edit", new { id = item.id_cliente }) |
+            @Html.ActionLink("Detalhar", "Details", new { id = item.id_cliente }) |
+            @Html.ActionLink("Deletar", "Delete", new { id = item.id_cliente })
             </td>
         </tr>
     }

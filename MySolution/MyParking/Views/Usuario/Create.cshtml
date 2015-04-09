@@ -1,0 +1,81 @@
+﻿@model MyParking.DAL.ViewData.UsuarioViewData
+
+@{
+    if (Model != null)
+    {
+        if (Model.FirstUsr)
+        {
+            Layout = "";
+        }
+    }
+    ViewBag.Title = "Create";
+}
+
+<h2>Criar Novo Usuário</h2>
+
+@using (@Html.BeginForm())
+{  
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Usuário</legend>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Usuario.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Usuario.Nome)
+            @Html.ValidationMessageFor(model => model.Usuario.Nome)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Usuario.Login)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Usuario.Login)
+            @Html.ValidationMessageFor(model => model.Usuario.Login)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Usuario.Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Usuario.Password)
+            @Html.ValidationMessageFor(model => model.Usuario.Password)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Usuario.ConfirmPassword)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Usuario.ConfirmPassword)
+            @Html.ValidationMessageFor(model => model.Usuario.ConfirmPassword)
+        </div>
+
+        <div class="checkbox-field">
+            @Html.CheckBoxFor(model => model.Usuario.Administrador)
+            @Html.DisplayNameFor(model => model.Usuario.Administrador)
+        </div>
+
+        <p>
+            <input type="submit" value="Salvar" />
+        </p>
+
+        @if (Model != null)
+        {
+            if (Model.Resultado != null)
+            {
+                if (Model.Resultado.tipoResultado != MyParking.Framework.Result.TipoResult.OK)
+                {
+            <div class="Mensagem">
+                @Html.Partial("_Mensagem", Model.Resultado)
+            </div>
+                }
+            }
+        }
+
+    </fieldset>
+}
+
+<div>@Html.ActionLink("Voltar", "Index")</div>

@@ -1,4 +1,4 @@
-﻿@model MyParking.DAL.Models.CorVeiculo
+﻿@model MyParking.DAL.ViewData.CorViewData
 
 @{
     ViewBag.Title = "Edit";
@@ -14,19 +14,33 @@
     <fieldset>
         <legend>Cor do Veículo</legend>
 
-        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.CorVeiculo.id_cor)
 
         <div class="display-label">
-            @Html.DisplayNameFor(model => model.corVeiculo)
+            @Html.DisplayNameFor(model => model.CorVeiculo.NomeCor)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.corVeiculo)
-            @Html.ValidationMessageFor(model => model.corVeiculo)
+            @Html.EditorFor(model => model.CorVeiculo.NomeCor)
+            @Html.ValidationMessageFor(model => model.CorVeiculo.NomeCor)
         </div>
         <p>
             <input type="submit" value="Salvar" />
         </p>
+
+        @if (Model != null)
+        {
+            if (Model.Resultado != null)
+            {
+                if (Model.Resultado.tipoResultado != MyParking.Framework.Result.TipoResult.OK)
+                {
+            <div class="Mensagem">
+                @Html.Partial("_Mensagem", Model.Resultado)
+            </div>
+                }
+            }
+        }
+
     </fieldset>
 }
 
-<div >@Html.ActionLink("Voltar", "Index")</div>
+<div>@Html.ActionLink("Voltar", "Index")</div>

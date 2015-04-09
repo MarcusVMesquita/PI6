@@ -1,4 +1,4 @@
-﻿@model MyParking.DAL.Models.MarcaVeiculo
+﻿@model MyParking.DAL.ViewData.MarcaViewData
 
 @{
     ViewBag.Title = "Delete";
@@ -7,22 +7,38 @@
 <h2>Deletar</h2>
 
 <h3>Você tem certeza que quer deletar?</h3>
-<fieldset>
-    <legend>Marca do Veículo</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.NomeMarca)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NomeMarca)
-    </div>
-
-</fieldset>
-
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>Marca do Veículo</legend>
+
+        @Html.HiddenFor(model => model.MarcaVeiculo.id_marca)
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.MarcaVeiculo.NomeMarca)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.MarcaVeiculo.NomeMarca)
+        </div>
+    </fieldset>
+    
     <p>
-        <input type="submit" value="Deletar" /> | 
-        @Html.ActionLink("Voltar", "Index")
+        <input type="submit" value="Deletar" />
+        | @Html.ActionLink("Voltar", "Index")
     </p>
+    
+    if (Model != null)
+    {
+        if (Model.Resultado != null)
+        {
+            if (Model.Resultado.tipoResultado != MyParking.Framework.Result.TipoResult.OK)
+            {
+                <div class="Mensagem">
+                    @Html.Partial("_Mensagem", Model.Resultado)
+                </div>
+            }
+        }
+    }
 }

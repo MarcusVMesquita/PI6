@@ -11,7 +11,7 @@ header, footer, nav, section {
 
 /* Styles for basic forms
 -----------------------------------------------------------*/
-fieldset {
+fieldset {  
    width: 90%;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	border: 1px solid #004000;

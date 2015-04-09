@@ -7,7 +7,8 @@ namespace MyParking.DAL.Models
     public class Cliente
     {
         [Key]
-        public int ID { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int id_cliente { get; set; }
 
         [Required(ErrorMessage = "O nome do cliente deve ser informado!")]
         [RegularExpression(@"^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]+$", ErrorMessage = "O nome não deve conter espaço")]
@@ -46,7 +47,12 @@ namespace MyParking.DAL.Models
         [DisplayName("Número de Telefone")]
         public string Telefone { get; set; }
 
-        [Required]
-        public virtual Veiculo veiculo { get; set; }
+
+        [Column("id_veiculo")]
+        [Display(Name = "chvVeiculo")]
+        public int VeiculoID { get; set; }
+
+        [ForeignKey("VeiculoID")]
+        public virtual Veiculo Veiculo { get; set; }
     }
 }

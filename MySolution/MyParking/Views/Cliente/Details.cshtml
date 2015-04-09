@@ -10,49 +10,49 @@
     <legend>Cliente</legend>
 
     <div class="display-label">
-        @Html.DisplayNameFor(model => model.NomeCliente)
+        <b>@Html.DisplayNameFor(model => model.NomeCliente)</b>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.NomeCliente)
     </div>
 
     <div class="display-label">
-        @Html.DisplayNameFor(model => model.SobreNome)
+        <b>@Html.DisplayNameFor(model => model.SobreNome)</b>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.SobreNome)
     </div>
 
     <div class="display-label">
-        @Html.DisplayNameFor(model => model.CPF)
+        <b>@Html.DisplayNameFor(model => model.CPF)</b>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.CPF)
     </div>
 
     <div class="display-label">
-        @Html.DisplayNameFor(model => model.Email)
+        <b>@Html.DisplayNameFor(model => model.Email)</b>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Email)
     </div>
 
     <div class="display-label">
-        @Html.DisplayNameFor(model => model.Telefone)
+        <b>@Html.DisplayNameFor(model => model.Telefone)</b>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Telefone)
     </div>
 
     <div class="display-label">
-        @Html.DisplayNameFor(model => model.CEP)
+        <b>@Html.DisplayNameFor(model => model.CEP)</b>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.CEP)
     </div>
 
     <div class="display-label">
-        @Html.DisplayNameFor(model => model.Endereco)
+        <b>@Html.DisplayNameFor(model => model.Endereco)</b>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Endereco)
@@ -62,27 +62,37 @@
         <legend>Veículo</legend>
 
         <div class="display-label">
-            @Html.DisplayNameFor(model => model.veiculo.PlacaVeiculo)
+            <b>@Html.DisplayNameFor(model => model.Veiculo.PlacaVeiculo)</b>
         </div>
         <div class="display-field">
-            @Html.DisplayFor(model => model.veiculo.PlacaVeiculo)
+            @Html.DisplayFor(model => model.Veiculo.PlacaVeiculo)
         </div>
 
         <div class="display-label">
-            @Html.DisplayNameFor(model => model.veiculo.corVeiculo)
+            <b>@Html.DisplayNameFor(model => model.Veiculo.CorVeiculo.NomeCor)</b>
         </div>
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.veiculo.marcaVeiculo.NomeMarca)
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Veiculo.CorVeiculo.NomeCor)
         </div>
 
         <div class="display-label">
-            @Html.DisplayNameFor(model => model.veiculo.ModeloVeiculo)
+            <b>@Html.DisplayNameFor(model => model.Veiculo.MarcaVeiculo.NomeMarca)</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Veiculo.MarcaVeiculo.NomeMarca)
+        </div>
+
+        <div class="display-label">
+            <b>@Html.DisplayNameFor(model => model.Veiculo.ModeloVeiculo)</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Veiculo.ModeloVeiculo)
         </div>
 
     </fieldset>
 
 </fieldset>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id_cliente }) |
     @Html.ActionLink("Voltar", "Index")
 </p>

@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
-using MyParking.DAL.Models;
 using MyParking.DAL.Services;
 using MyParking.Framework;
+using MyParking.DAL.ViewData;
 
 namespace MyParking.BLL.Controllers
 {
@@ -20,53 +20,65 @@ namespace MyParking.BLL.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(MarcaVeiculo marca)
+        public ActionResult Create(MarcaViewData Data)
         {
+            Result resultado = null;
             if (ModelState.IsValid)
             {
-                service.GravaMarca(marca);
-                return RedirectToAction("Index");
+                resultado = service.GravaMarca(Data.MarcaVeiculo);
+                if (resultado.tipoResultado == Result.TipoResult.OK)
+                    return RedirectToAction("Index");
             }
-            else
-                return View(marca);
+
+            Data.Resultado = resultado;
+            return View(Data);
         }
 
         public ActionResult Edit(int id = 0)
         {
-            MarcaVeiculo marca = service.getMarca(id);
-            if (marca == null)
+            MarcaViewData Data = new MarcaViewData();
+            Data.MarcaVeiculo = service.GetMarca(id);
+            if (Data.MarcaVeiculo == null)
                 return HttpNotFound();
             else
-                return View(marca);
+                return View(Data);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(MarcaVeiculo marca)
+        public ActionResult Edit(MarcaViewData Data)
         {
+            Result resultado = null;
             if (ModelState.IsValid)
             {
-                service.GravaMarca(marca);
-                return RedirectToAction("Index");
+                resultado = service.GravaMarca(Data.MarcaVeiculo);
+                if (resultado.tipoResultado == Result.TipoResult.OK)
+                    return RedirectToAction("Index");
             }
-            return View(marca);
+            Data.Resultado = resultado;
+            return View(Data);
         }
 
         public ActionResult Delete(int id = 0)
         {
-            MarcaVeiculo marca = service.getMarca(id);
-            if (marca == null)
+            MarcaViewData Data = new MarcaViewData();
+            Data.MarcaVeiculo = service.GetMarca(id);
+            if (Data.MarcaVeiculo == null)
                 return HttpNotFound();
             else
-                return View(marca);
+                return View(Data);
         }
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id = 0)
+        public ActionResult DeleteConfirmed(MarcaViewData Data)
         {
-            service.DeleteMarca(id);
-            return RedirectToAction("Index");
+            Result resultado = service.DeleteMarca(Data.MarcaVeiculo.id_marca);
+            if (resultado.tipoResultado == Result.TipoResult.OK)
+                return RedirectToAction("Index");
+
+            Data.Resultado = resultado;
+            return View(Data);
         }
     }
 }

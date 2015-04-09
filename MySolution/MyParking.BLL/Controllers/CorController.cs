@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
-using MyParking.DAL.Models;
 using MyParking.DAL.Services;
 using MyParking.Framework;
+using MyParking.DAL.ViewData;
 
 namespace MyParking.BLL.Controllers
 {
@@ -20,53 +20,65 @@ namespace MyParking.BLL.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(CorVeiculo cor)
+        public ActionResult Create(CorViewData Data)
         {
+            Result resultado = null;
             if (ModelState.IsValid)
             {
-                service.GravaCor(cor);
-                return RedirectToAction("Index");
+                resultado = service.GravaCor(Data.CorVeiculo);
+                if (resultado.tipoResultado == Result.TipoResult.OK)
+                    return RedirectToAction("Index");
             }
-            else
-                return View(cor);
+
+            Data.Resultado = resultado;
+            return View(Data);
         }
 
         public ActionResult Edit(int id = 0)
         {
-            CorVeiculo cor = service.getCor(id);
-            if (cor == null)
+            CorViewData Data = new CorViewData();
+            Data.CorVeiculo = service.GetCor(id);
+            if (Data.CorVeiculo == null)
                 return HttpNotFound();
             else
-                return View(cor);
+                return View(Data);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(CorVeiculo cor)
+        public ActionResult Edit(CorViewData Data)
         {
+            Result resultado = null;
             if (ModelState.IsValid)
             {
-                service.GravaCor(cor);
-                return RedirectToAction("Index");
+                resultado = service.GravaCor(Data.CorVeiculo);
+                if (resultado.tipoResultado == Result.TipoResult.OK)
+                    return RedirectToAction("Index");
             }
-            return View(cor);
+            Data.Resultado = resultado;
+            return View(Data);
         }
 
         public ActionResult Delete(int id = 0)
         {
-            CorVeiculo cor = service.getCor(id);
-            if (cor == null)
+            CorViewData Data = new CorViewData();
+            Data.CorVeiculo = service.GetCor(id);
+            if (Data.CorVeiculo == null)
                 return HttpNotFound();
             else
-                return View(cor);
+                return View(Data);
         }
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id = 0)
+        public ActionResult DeleteConfirmed(CorViewData Data)
         {
-            service.DeleteCor(id);
-            return RedirectToAction("Index");
+            Result resultado = service.DeleteCor(Data.CorVeiculo.id_cor);
+            if (resultado.tipoResultado == Result.TipoResult.OK)
+                return RedirectToAction("Index");
+
+            Data.Resultado = resultado;
+            return View(Data);
         }
     }
 }

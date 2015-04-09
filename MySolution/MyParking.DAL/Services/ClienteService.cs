@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data;
 using MyParking.Framework;
+using System.Data.Entity.Validation;
 
 
 namespace MyParking.DAL.Services
@@ -25,7 +26,7 @@ namespace MyParking.DAL.Services
             }
         }
 
-        public Cliente getCliente(int id = 0)
+        public Cliente GetCliente(int id = 0)
         {
             try
             {
@@ -38,7 +39,7 @@ namespace MyParking.DAL.Services
         }
 
         public Result GravaCliente(Cliente cliente)
-        {    
+        {
             try
             {
                 // regra de negócio
@@ -46,15 +47,24 @@ namespace MyParking.DAL.Services
                     return new Result("CPF do Cliente não é válido.", Result.TipoResult.Alert);
 
                 //Faz as formatações dos valores para salvar no banco de dados.
-                //cliente.CPF = Extensions.FormataString("###.###.###-##", cliente.CPF);
-                //cliente.CEP = Extensions.FormataString("#####-###", cliente.CEP);
-                //cliente.veiculo.PlacaVeiculo = Extensions.FormataString("###-####", cliente.veiculo.PlacaVeiculo);
+                cliente.NomeCliente = Extensions.ProperCase(cliente.NomeCliente);
+                cliente.SobreNome = Extensions.ProperCase(cliente.SobreNome);
+                cliente.Endereco = Extensions.ProperCase(cliente.Endereco);
+
+                cliente.CPF = Extensions.FormataString("###.###.###-##", cliente.CPF);
+                cliente.CEP = Extensions.FormataString("#####-###", cliente.CEP);
+                cliente.Veiculo.PlacaVeiculo = Extensions.FormataString("###-####", cliente.Veiculo.PlacaVeiculo).ToUpper();
 
                 //Faz a Gravação
-                if (cliente.ID != 0) //Esta Editando um existente
+                if (cliente.id_cliente != 0) //Esta Editando um existente
                     db.Entry(cliente).State = EntityState.Modified;
                 else
+                {
+                    if (GetClienteByCPF(cliente.CPF) != null)
+                        return new Result("Já existe um cliente cadastrado com esse CPF.", Result.TipoResult.Alert);
+
                     db.clientes.Add(cliente);
+                }
 
                 db.SaveChanges();
 
@@ -66,9 +76,29 @@ namespace MyParking.DAL.Services
             }
         }
 
+        private Cliente GetClienteByCPF(string CPFCliente)
+        {
+            try
+            {
+                var m = db.clientes.Where(model => model.CPF.ToUpper() == CPFCliente.ToUpper());
+
+                if (m.Count() > 0)
+                {
+                    Cliente cliente = m.First();
+                    return cliente;
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
         public Result DeleteCliente(int id)
         {
-            Cliente cliente = getCliente(id);
+            Cliente cliente = GetCliente(id);
             db.clientes.Remove(cliente);
             db.SaveChanges();
 

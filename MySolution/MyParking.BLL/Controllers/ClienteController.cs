@@ -2,6 +2,7 @@
 using MyParking.DAL.Models;
 using MyParking.DAL.Services;
 using MyParking.Framework;
+using MyParking.DAL.ViewData;
 
 namespace MyParking.BLL.Controllers
 {
@@ -22,7 +23,7 @@ namespace MyParking.BLL.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            Cliente cliente = service.getCliente(id);
+            Cliente cliente = service.GetCliente(id);
             if (cliente == null)
                 return HttpNotFound();
             else
@@ -31,45 +32,58 @@ namespace MyParking.BLL.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Cliente cliente = service.getCliente(id);
+            Cliente cliente = service.GetCliente(id);
             if (cliente == null)
                 return HttpNotFound();
             else
-                return View(cliente);
+            {
+                ClienteViewData data = new ClienteViewData(cliente);
+                return View(data);
+            }
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Cliente cliente)
+        public ActionResult Edit(ClienteViewData data)
         {
+            Result resultado;
             if (ModelState.IsValid)
             {
-                service.GravaCliente(cliente);
-                return RedirectToAction("Index");
+                resultado = service.GravaCliente(data.Cliente);
+                if (resultado.tipoResultado == Result.TipoResult.OK)
+                    return RedirectToAction("Index");
+                else
+                    data.Resultado = resultado;
             }
-            return View(cliente);
+            
+            return View(data.Cliente);
         }
 
         public ActionResult Create()
         {
-            return View();
+            ClienteViewData data = new ClienteViewData();
+            return View(data);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Cliente cliente)
+        public ActionResult Create(ClienteViewData Data)
         {
+            Result resultado = null;
+
             if (ModelState.IsValid)
             {
-                service.GravaCliente(cliente);
-                return RedirectToAction("Index");
+                resultado = service.GravaCliente(Data.Cliente);
+                if (resultado.tipoResultado == Result.TipoResult.OK)
+                    return RedirectToAction("Index");
             }
-            return View(cliente);
+            Data.Resultado = resultado;
+            return View(Data);
         }
 
         public ActionResult Delete(int id = 0)
         {
-            Cliente cliente = service.getCliente(id);
+            Cliente cliente = service.GetCliente(id);
             if (cliente == null)
                 return HttpNotFound();
             else
@@ -80,7 +94,7 @@ namespace MyParking.BLL.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id = 0)
         {
-            service.DeleteCliente(id);
+            Result resultado = service.DeleteCliente(id);
             return RedirectToAction("Index");
         }
     }

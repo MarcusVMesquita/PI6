@@ -1,4 +1,4 @@
-﻿@model MyParking.DAL.Models.MarcaVeiculo
+﻿@model MyParking.DAL.ViewData.MarcaViewData
 
 @{
     ViewBag.Title = "Edit";
@@ -14,19 +14,32 @@
     <fieldset>
         <legend>Marca de Veículo</legend>
 
-        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.MarcaVeiculo.id_marca)
 
         <div class="display-label">
-            @Html.DisplayNameFor(model => model.NomeMarca)
+            @Html.DisplayNameFor(model => model.MarcaVeiculo.NomeMarca)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.NomeMarca)
-            @Html.ValidationMessageFor(model => model.NomeMarca)
+            @Html.EditorFor(model => model.MarcaVeiculo.NomeMarca)
+            @Html.ValidationMessageFor(model => model.MarcaVeiculo.NomeMarca)
         </div>
         <p>
             <input type="submit" value="Salvar" />
         </p>
+
+        @if (Model != null)
+        {
+            if (Model.Resultado != null)
+            {
+                if (Model.Resultado.tipoResultado != MyParking.Framework.Result.TipoResult.OK)
+                {
+            <div class="Mensagem">
+                @Html.Partial("_Mensagem", Model.Resultado)
+            </div>
+                }
+            }
+        }
     </fieldset>
 }
 
-<div >@Html.ActionLink("Voltar", "Index")</div>
+<div>@Html.ActionLink("Voltar", "Index")</div>

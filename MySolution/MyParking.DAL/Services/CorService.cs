@@ -23,14 +23,42 @@ namespace MyParking.DAL.Services
             }
         }
 
+        public CorVeiculo GetCorByName(string NomeCor)
+        {
+            try
+            {
+                var m = db.corVeiculo.Where(model => model.NomeCor.ToUpper() == NomeCor.ToUpper());
+
+                if (m.Count() > 0)
+                {
+                    CorVeiculo cor = m.First();
+                    return cor;
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
         public Result GravaCor(CorVeiculo cor)
         {
             try
             {
-                if (cor.ID != 0) //Editando a cor
+                //Deixa as primeiras letras Maisculas
+                cor.NomeCor = Extensions.ProperCase(cor.NomeCor);
+
+                if (cor.id_cor != 0) //Editando a cor
                     db.Entry(cor).State = EntityState.Modified;
                 else
+                {
+                    if (GetCorByName(cor.NomeCor) != null)
+                        return new Result("Já existe uma cor cadastrada com esse nome.", Result.TipoResult.Alert);
+
                     db.corVeiculo.Add(cor);
+                }
 
                 db.SaveChanges();
 
@@ -42,7 +70,7 @@ namespace MyParking.DAL.Services
             }
         }
 
-        public CorVeiculo getCor(int id)
+        public CorVeiculo GetCor(int id)
         {
             try
             {
@@ -56,11 +84,18 @@ namespace MyParking.DAL.Services
 
         public Result DeleteCor(int id)
         {
-            CorVeiculo cor = getCor(id);
-            db.corVeiculo.Remove(cor);
-            db.SaveChanges();
+            try
+            {
+                CorVeiculo cor = GetCor(id);
+                db.corVeiculo.Remove(cor);
+                db.SaveChanges();
 
-            return new Result("Cor deletada com sucesso", Result.TipoResult.OK);
+                return new Result("Cor deletada com sucesso", Result.TipoResult.OK);
+            }
+            catch (Exception ex)
+            {
+                return new Result("Erro na exclusão da Cor" + "\n" + "Erro: " + ex.Message, Result.TipoResult.Error);
+            }
         }
     }
 }

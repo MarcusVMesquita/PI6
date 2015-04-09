@@ -39,10 +39,10 @@ namespace MyParking.Framework
 
         public static string TiraCaracteres(this string value)
         {
-            return value.Replace("-", "").Replace(".", "").Replace("/", "").Replace("(", "").Replace(")", "").Replace(" ", "");
+            return value.Replace("-", "").Replace(".", "").Replace("/", "").Replace("(", "").Replace(")", "").Replace(" ", "").Trim();
         }
 
-        public static string FormataString(string mascaraString, string valor)
+        public static string FormataString(this string mascaraString, string valor)
         {
             string novoValor = string.Empty;
             int posicao = 0;
@@ -53,7 +53,7 @@ namespace MyParking.Framework
 
             for (int i = 0; mascara.Length > i; i++)
             {
-                if (mascara[i].Equals("#"))
+                if (mascara[i].ToString().Equals("#"))
                 {
                     if (valor.Length > posicao)
                     {
@@ -83,8 +83,7 @@ namespace MyParking.Framework
             int soma;
             int resto;
 
-            CPF = CPF.Trim();
-            CPF = CPF.Replace(".", "").Replace("-", "");
+            CPF = TiraCaracteres(CPF);
 
             if (CPF.Length != 11)
                 return false;
@@ -116,6 +115,20 @@ namespace MyParking.Framework
             Digito = Digito + resto.ToString();
 
             return CPF.EndsWith(Digito);
+        }
+
+        public static string ProperCase(this string s)
+        {
+            s = s.ToLower();
+            string sProper = "";
+            char[] seps = new char[] { ' ' };
+            foreach (string ss in s.Split(seps))
+            {
+                sProper += char.ToUpper(ss[0]);
+                sProper += (ss.Substring(1, ss.Length - 1) + ' ');
+            }
+            sProper.Trim();
+            return sProper;
         }
     }
 }

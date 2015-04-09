@@ -13,7 +13,7 @@
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Cor)
+            @Html.DisplayNameFor(model => model.NomeCor)
         </th>
         <th></th>
     </tr>
@@ -21,11 +21,11 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Cor)
+                @Html.DisplayFor(modelItem => item.NomeCor)
             </td>
             <td>
-                @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Deletar", "Delete", new { id = item.ID })
+                @Html.ActionLink("Editar", "Edit", new { id = item.id_cor }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.id_cor })
             </td>
         </tr>
     }
