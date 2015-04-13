@@ -127,7 +127,7 @@ namespace MyParking.Framework
                 sProper += char.ToUpper(ss[0]);
                 sProper += (ss.Substring(1, ss.Length - 1) + ' ');
             }
-            sProper.Trim();
+            sProper = sProper.Trim();
             return sProper;
         }
     }
