@@ -4,6 +4,7 @@ using MyParking.DAL.Models;
 using MyParking.DAL.Context;
 using System.Linq;
 using MyParking.Framework;
+using System.Data.Entity;
 
 namespace MyParking.DAL.Services
 {
@@ -53,7 +54,7 @@ namespace MyParking.DAL.Services
                 usuario.Password = Cripto.Criptografar(usuario.Password, usuario.Login);
 
                 if (usuario.id_usuario != 0) //Esta alterando
-                    db.Entry(usuario).State = System.Data.EntityState.Modified;
+                    db.Entry(usuario).State = EntityState.Modified;
                 else
                 {
                     if (getUsrByLogin(usuario.Login) != null)

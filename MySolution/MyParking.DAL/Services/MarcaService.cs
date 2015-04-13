@@ -3,7 +3,7 @@ using MyParking.DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Data;
+using System.Data.Entity;
 using MyParking.Framework;
 
 namespace MyParking.DAL.Services

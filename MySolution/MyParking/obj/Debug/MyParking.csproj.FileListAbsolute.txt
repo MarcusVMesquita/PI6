@@ -2,7 +2,6 @@ C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking\obj\Debug\MyParking.csp
 C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking\bin\MyParking.dll
 C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking\bin\MyParking.pdb
 C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
 C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking\bin\MyParking.BLL.dll
 C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking\bin\MyParking.DAL.dll
 C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking\bin\Newtonsoft.Json.dll
@@ -66,3 +65,5 @@ C:\Users\Diego\desktop\MySolution\MyParking\bin\EntityFramework.xml
 C:\Users\Diego\desktop\MySolution\MyParking\obj\Debug\MyParking.csprojResolveAssemblyReference.cache
 C:\Users\Diego\desktop\MySolution\MyParking\obj\Debug\MyParking.dll
 C:\Users\Diego\desktop\MySolution\MyParking\obj\Debug\MyParking.pdb
+C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking\bin\MyParking.Framework.dll
+C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking\bin\MyParking.Framework.pdb

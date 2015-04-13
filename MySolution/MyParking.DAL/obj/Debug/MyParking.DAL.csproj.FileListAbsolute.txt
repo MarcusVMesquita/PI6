@@ -6,7 +6,6 @@ C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking.DAL\bin\Debug\MyParking
 C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking.DAL\bin\Debug\MyParking.Framework.pdb
 C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking.DAL\bin\Debug\EntityFramework.xml
 C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.csprojResolveAssemblyReference.cache
-C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.Migrations.MyParkingDataBase.resources
 C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.csproj.GenerateResource.Cache
 C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.dll
 C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.pdb
@@ -22,3 +21,6 @@ C:\Users\Diego\desktop\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.dll
 C:\Users\Diego\desktop\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.pdb
 C:\Users\Diego\desktop\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.Migrations.MyParking.resources
 C:\Users\Diego\desktop\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.csproj.GenerateResource.Cache
+C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.Migrations.MyParking.resources
+C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Diego\Documents\GitHub\PI6\MySolution\MyParking.DAL\bin\Debug\EntityFramework.SqlServer.xml
