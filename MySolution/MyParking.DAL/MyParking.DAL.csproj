@@ -53,6 +53,10 @@
     <Compile Include="Migrations\201504081836028_MyParking.Designer.cs">
       <DependentUpon>201504081836028_MyParking.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504222238595_A.cs" />
+    <Compile Include="Migrations\201504222238595_A.Designer.cs">
+      <DependentUpon>201504222238595_A.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ViewData\ClienteViewData.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -70,7 +74,9 @@
     <Compile Include="ViewData\UsuarioViewData.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +88,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201504081836028_MyParking.resx">
       <DependentUpon>201504081836028_MyParking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504222238595_A.resx">
+      <DependentUpon>201504222238595_A.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

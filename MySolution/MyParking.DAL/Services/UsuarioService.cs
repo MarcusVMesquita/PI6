@@ -24,6 +24,19 @@ namespace MyParking.DAL.Services
             }
         }
 
+        public Usuario GetUsuario(int id)
+        {
+            try
+            {
+                return db.usuarios.Find(id);
+            }
+            catch (Exception excp)
+            {
+                throw;
+            }
+
+        }
+
         public Usuario getUsrByLogin(string Login)
         {
             try
@@ -72,5 +85,17 @@ namespace MyParking.DAL.Services
                 return new Result("Erro na gravação do Cliente" + "\n" + "Erro: " + ex.Message, Result.TipoResult.Error);
             }
         }
+
+        public Result DeletaUsuario(int id)
+        {
+            Usuario usuario = GetUsuario(id);
+            db.usuarios.Remove(usuario);
+            db.SaveChanges();
+
+            return new Result("Usuário deletado com sucesso", Result.TipoResult.OK);
+
+        }
+
     }
+
 }

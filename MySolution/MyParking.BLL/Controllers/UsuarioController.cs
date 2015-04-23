@@ -52,5 +52,24 @@ namespace MyParking.BLL.Controllers
             Data.Resultado = resultado;
             return View(Data);
         }
+
+        public ActionResult Delete(int id = 0)
+        {
+            Usuario usuario = service.GetUsuario(id);
+            if (usuario == null)
+                return HttpNotFound();
+            else
+                return View(usuario);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id = 0)
+        {
+            Result resultado = service.DeletaUsuario(id);
+            return RedirectToAction("Index");
+        }
+ 
     }
+
 }
