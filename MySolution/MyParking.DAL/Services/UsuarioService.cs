@@ -89,6 +89,9 @@ namespace MyParking.DAL.Services
         public Result DeletaUsuario(int id)
         {
             Usuario usuario = GetUsuario(id);
+            if (usuario.Administrador)
+                return new Result("Não pode deletar o usuário administrador", Result.TipoResult.Alert);
+            
             db.usuarios.Remove(usuario);
             db.SaveChanges();
 
