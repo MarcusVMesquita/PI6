@@ -34,8 +34,7 @@ C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\bin\Debug\MyParkin
 C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\bin\Debug\EntityFramework.xml
 C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.csprojResolveAssemblyReference.cache
-C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.Migrations.MyParking.resources
-C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.csproj.GenerateResource.Cache
 C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.dll
 C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.pdb
-C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.Migrations.A.resources
+C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.Migrations.MyParking.resources
+C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.csproj.GenerateResource.Cache

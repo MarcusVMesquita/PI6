@@ -101,3 +101,5 @@ C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking\bin\EntityFramework.xm
 C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking\obj\Debug\MyParking.csprojResolveAssemblyReference.cache
 C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking\obj\Debug\MyParking.dll
 C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking\obj\Debug\MyParking.pdb
+C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking\bin\EntityFramework.SqlServer.dll
+C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking\bin\EntityFramework.SqlServer.xml
