@@ -8,14 +8,27 @@ namespace MyParking.BLL.Controllers
 {
     public class VagaController : Controller
     {
-
-        private VagaService service;
-        public VagaController()
+        VagaService servico = new VagaService();
+        
+        public ActionResult Create()
         {
-            service = new VagaService();
+            return View();
         }
 
-        //public ActionResult Create()
-        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(VagaViewData Vaga)
+        {
+            Result resultado = null;
+            if (ModelState.IsValid)
+            {
+                resultado = servico.SetNumVagas(Vaga.QtdeVagas);
+                if (resultado.tipoResultado == Result.TipoResult.OK)
+                    return RedirectToAction("Index");
+            }
+
+            Vaga.Resultado = resultado;
+            return View(Vaga);
+        }
     }
 }

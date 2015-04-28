@@ -18,7 +18,7 @@ namespace MyParking.DAL.Services
             {
                 return db.usuarios.ToList();
             }
-            catch (Exception ex)
+            catch (Exception expt)
             {
                 throw;
             }
@@ -30,7 +30,7 @@ namespace MyParking.DAL.Services
             {
                 return db.usuarios.Find(id);
             }
-            catch (Exception excp)
+            catch (Exception expt)
             {
                 throw;
             }

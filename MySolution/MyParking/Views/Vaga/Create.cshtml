@@ -1,5 +1,39 @@
-﻿@{
+﻿@using MyParking.DAL.ViewData
+
+@model VagaViewData
+
+@{
     ViewBag.Title = "Create";
 }
 
 <h2>Create</h2>
+
+@using (Html.BeginForm());
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true);   
+    
+    <fieldset>
+        <legend>Vagas</legend>
+        
+        <!--Criar Label-->
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.QtdeVagas)
+        </div>
+        <!--Crirar textbox-->
+        <div class="editor-field">
+            @Html.EditorFor(model => model.QtdeVagas)
+        </div>
+       
+        <!--Criar botão salvar-->
+         <p>
+             <input type="submit" value="Salvar" />
+        </p>
+        
+
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index");
+</div>

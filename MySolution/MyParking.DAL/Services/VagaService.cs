@@ -33,7 +33,7 @@ namespace MyParking.DAL.Services
                 try
                 {
                     Vaga novaVaga = new Vaga();
-                    novaVaga.Ocupado = 0;
+                    novaVaga.Ocupado = false;
 
                     db.vagas.Add(novaVaga);
 

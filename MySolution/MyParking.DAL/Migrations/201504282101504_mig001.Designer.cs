@@ -7,13 +7,13 @@ namespace MyParking.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class MyParking : IMigrationMetadata
+    public sealed partial class mig001 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(MyParking));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(mig001));
         
         string IMigrationMetadata.Id
         {
-            get { return "201504270302169_MyParking"; }
+            get { return "201504282101504_mig001"; }
         }
         
         string IMigrationMetadata.Source

@@ -36,5 +36,5 @@ C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\bin\Debug\EntityFr
 C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.csprojResolveAssemblyReference.cache
 C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.dll
 C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.pdb
-C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.Migrations.MyParking.resources
+C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.Migrations.mig001.resources
 C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.csproj.GenerateResource.Cache

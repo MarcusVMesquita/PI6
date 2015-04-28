@@ -49,9 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\MyParkingContext.cs" />
-    <Compile Include="Migrations\201504270302169_MyParking.cs" />
-    <Compile Include="Migrations\201504270302169_MyParking.Designer.cs">
-      <DependentUpon>201504270302169_MyParking.cs</DependentUpon>
+    <Compile Include="Migrations\201504282101504_mig001.cs" />
+    <Compile Include="Migrations\201504282101504_mig001.Designer.cs">
+      <DependentUpon>201504282101504_mig001.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Vaga.cs" />
@@ -85,8 +85,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201504270302169_MyParking.resx">
-      <DependentUpon>201504270302169_MyParking.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201504282101504_mig001.resx">
+      <DependentUpon>201504282101504_mig001.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
