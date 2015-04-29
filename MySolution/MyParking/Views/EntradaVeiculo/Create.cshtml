@@ -1,6 +1,6 @@
 ﻿@using MyParking.DAL.ViewData
 
-@model VagaViewData
+@model EntradaVeiculoViewData
 
 @{
     ViewBag.Title = "Create";
@@ -8,21 +8,22 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm());
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true);   
     
     <fieldset>
-        <legend>Vagas</legend>
+        <legend>Entrada de veículos</legend>
         
         <!--Criar Label-->
         <div class="display-label">
-            @Html.DisplayNameFor(model => model.QtdeVagas)
+            @Html.DisplayNameFor(model => model.EntradaVeiculo.PlacaVeiculo)
         </div>
         <!--Crirar textbox-->
         <div class="editor-field">
-            @Html.EditorFor(model => model.QtdeVagas)
+            @Html.EditorFor(model => model.EntradaVeiculo.PlacaVeiculo)
+            @Html.ValidationMessageFor(model => model.EntradaVeiculo.PlacaVeiculo)
         </div>
        
         <!--Criar botão salvar-->

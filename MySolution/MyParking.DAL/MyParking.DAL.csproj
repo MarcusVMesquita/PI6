@@ -53,9 +53,18 @@
     <Compile Include="Migrations\201504282101504_mig001.Designer.cs">
       <DependentUpon>201504282101504_mig001.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504282243299_mig002.cs" />
+    <Compile Include="Migrations\201504282243299_mig002.Designer.cs">
+      <DependentUpon>201504282243299_mig002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504292049454_mig003.cs" />
+    <Compile Include="Migrations\201504292049454_mig003.Designer.cs">
+      <DependentUpon>201504292049454_mig003.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Vaga.cs" />
-    <Compile Include="Services\VagaService.cs" />
+    <Compile Include="Models\Configuracao.cs" />
+    <Compile Include="Models\EntradaVeiculo.cs" />
+    <Compile Include="Services\EntradaVeiculoService.cs" />
     <Compile Include="ViewData\ClienteViewData.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\CorVeiculo.cs" />
@@ -68,9 +77,9 @@
     <Compile Include="Services\MarcaService.cs" />
     <Compile Include="Services\UsuarioService.cs" />
     <Compile Include="ViewData\CorViewData.cs" />
+    <Compile Include="ViewData\EntradaVeiculoViewData.cs" />
     <Compile Include="ViewData\MarcaViewData.cs" />
     <Compile Include="ViewData\UsuarioViewData.cs" />
-    <Compile Include="ViewData\VagaViewData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -87,6 +96,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201504282101504_mig001.resx">
       <DependentUpon>201504282101504_mig001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504282243299_mig002.resx">
+      <DependentUpon>201504282243299_mig002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504292049454_mig003.resx">
+      <DependentUpon>201504292049454_mig003.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
