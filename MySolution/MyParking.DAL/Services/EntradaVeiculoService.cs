@@ -29,7 +29,7 @@ namespace MyParking.DAL.Services
         {
             try
             {
-                var m = db.configuracao.First();
+                var m = db.configVaga.First();
 
                 if (db.entradas.Count() >= m.qtdeVagas)
                     return new Result("O estacionamento está lotado", Result.TipoResult.Alert);
@@ -49,6 +49,18 @@ namespace MyParking.DAL.Services
             catch (Exception ex)
             {
                 return new Result("Erro na gravação da Vaga" + "\n" + "Erro: " + ex.Message, Result.TipoResult.Error);
+            }
+        }
+
+        public IEnumerable<EntradaVeiculo> entradasToList()
+        {
+            try
+            {
+                return db.entradas.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw;
             }
         }
 

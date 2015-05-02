@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyParking.DAL.Models
 {
-    public class Configuracao
+    public class ConfVagas
     {
         [Key]
         [Required]

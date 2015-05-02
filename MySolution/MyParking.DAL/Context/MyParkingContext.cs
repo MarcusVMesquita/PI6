@@ -15,7 +15,7 @@ namespace MyParking.DAL.Context
         public DbSet<CorVeiculo> corVeiculo { get; set; }
         public DbSet<Usuario> usuarios { get; set; }
         public DbSet<EntradaVeiculo> entradas { get; set; }
-        public DbSet<Configuracao> configuracao { get; set; }
+        public DbSet<ConfVagas> configVaga { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

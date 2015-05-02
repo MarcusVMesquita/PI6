@@ -61,9 +61,14 @@
     <Compile Include="Migrations\201504292049454_mig003.Designer.cs">
       <DependentUpon>201504292049454_mig003.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504302057068_mig004.cs" />
+    <Compile Include="Migrations\201504302057068_mig004.Designer.cs">
+      <DependentUpon>201504302057068_mig004.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Configuracao.cs" />
+    <Compile Include="Models\ConfVagas.cs" />
     <Compile Include="Models\EntradaVeiculo.cs" />
+    <Compile Include="Services\ConfVagasService.cs" />
     <Compile Include="Services\EntradaVeiculoService.cs" />
     <Compile Include="ViewData\ClienteViewData.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -102,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504292049454_mig003.resx">
       <DependentUpon>201504292049454_mig003.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504302057068_mig004.resx">
+      <DependentUpon>201504302057068_mig004.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

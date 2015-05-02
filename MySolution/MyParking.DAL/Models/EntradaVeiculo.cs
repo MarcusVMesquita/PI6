@@ -9,6 +9,7 @@ namespace MyParking.DAL.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DisplayName("Numero da vaga")]
         public int id_Entrada { get; set; }
 
         [Required]
