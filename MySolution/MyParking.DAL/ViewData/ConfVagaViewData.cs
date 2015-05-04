@@ -10,7 +10,7 @@ namespace MyParking.DAL.ViewData
 {
     public class ConfVagaViewData
     {
-        public ConfVagaViewData ConfigVaga { get; set; }
+        public ConfVagas ConfigVaga { get; set; }
         public Result Result { get; set; }
     }
 }

@@ -1,5 +1,42 @@
-﻿@{
+﻿@model MyParking.DAL.ViewData.ConfVagaViewData
+
+@{
     ViewBag.Title = "Edit";
 }
 
 <h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+
+        <div class ="display-label">
+            @Html.DisplayNameFor(model => model.ConfigVaga.qtdeVagas)
+        </div>
+
+        <div class ="editor-field">
+            @Html.EditorFor(model => model.ConfigVaga.qtdeVagas)
+        </div>
+
+        <p>
+            <input type="submit" value="Salvar" />
+        </p>
+ 
+        @if (Model != null)
+        {
+            if (Model.Result != null)
+            {
+                if (Model.Result.tipoResultado != MyParking.Framework.Result.TipoResult.OK)
+                {
+            <div class="Mensagem">
+                @Html.Partial("_Mensagem", Model.Result)
+            </div>
+                }
+            }
+        }
+
+    </fieldset>
+}

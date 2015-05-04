@@ -13,11 +13,20 @@ namespace MyParking.DAL.Services
     {
         MyParkingContext db = new MyParkingContext();
 
-        public Result definirTamanho(int tamEstacionamento)
+        public ConfVagas getTamanho()
         {
-            ConfVagas novaConf = new ConfVagas();
-            novaConf.qtdeVagas = tamEstacionamento;
-
+            try
+            {
+                return db.configVaga.First();
+            }
+            catch (Exception expt)
+            {
+                throw;
+            }
+        }
+        
+        public Result definirTamanho(ConfVagas novaConf)
+        {
             try
             {
                 var m = db.configVaga.First();
@@ -27,7 +36,10 @@ namespace MyParking.DAL.Services
                     db.configVaga.Remove(m);
                     db.configVaga.Add(novaConf);
 
+                    db.SaveChanges();
+
                     return new Result("Tamanho do estacionamento definido com sucesso", Result.TipoResult.OK);
+          
                 }
                
                 db.configVaga.Add(novaConf);
