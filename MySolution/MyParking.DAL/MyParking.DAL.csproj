@@ -81,6 +81,7 @@
     <Compile Include="Services\CorService.cs" />
     <Compile Include="Services\MarcaService.cs" />
     <Compile Include="Services\UsuarioService.cs" />
+    <Compile Include="ViewData\ConfVagaViewData.cs" />
     <Compile Include="ViewData\CorViewData.cs" />
     <Compile Include="ViewData\EntradaVeiculoViewData.cs" />
     <Compile Include="ViewData\MarcaViewData.cs" />

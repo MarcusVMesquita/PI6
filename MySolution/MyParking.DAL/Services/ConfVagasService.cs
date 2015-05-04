@@ -6,9 +6,10 @@ using MyParking.DAL.Models;
 using System.Threading.Tasks;
 using MyParking.Framework;
 using MyParking.DAL.Context;
+
 namespace MyParking.DAL.Services
 {
-    class ConfVagasService
+    public class ConfVagasService
     {
         MyParkingContext db = new MyParkingContext();
 
