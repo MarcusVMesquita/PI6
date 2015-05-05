@@ -10,6 +10,7 @@ namespace MyParking.BLL.Controllers
     public class UsuarioController : Controller
     {
         UsuarioService service = new UsuarioService();
+    
         public ActionResult Index()
         {
             return View(service.UsuarioToList());
@@ -76,7 +77,32 @@ namespace MyParking.BLL.Controllers
             else
                 return View (Data);
         }
- 
+
+        public ActionResult Edit(int id)
+        {
+            UsuarioViewData data = new UsuarioViewData();
+            data.Usuario = service.GetUsuario(id);
+            if (data.Usuario == null)
+                return HttpNotFound();
+            else
+                return View(data);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(UsuarioViewData data)
+        {
+            Result resultado = null;
+            if (ModelState.IsValid)
+            {
+                resultado = service.GravaUsuario(data.Usuario);
+                if (resultado.tipoResultado == Result.TipoResult.OK)
+                    return RedirectToAction("Index");            
+            }
+            data.Resultado = resultado;
+            return View(data);
+        }
+
     }
 
 }

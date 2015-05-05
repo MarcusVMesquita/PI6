@@ -16,7 +16,7 @@ namespace MyParking.DAL.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id_configuracao { get; set; }
 
-        [Required]
+        [Required(ErrorMessage="A quantidade de vagas deve ser informada")]
         [DisplayName("Qtde Vaga")]
         public int qtdeVagas { get; set; }
 
