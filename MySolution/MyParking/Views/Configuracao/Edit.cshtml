@@ -1,4 +1,4 @@
-﻿@model MyParking.DAL.ViewData.ConfVagaViewData
+﻿@model MyParking.DAL.ViewData.ConfiguracaoViewData
 
 @{
     ViewBag.Title = "Edit";
@@ -12,14 +12,15 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
+        <legend> Configuração de Vaga</legend>
 
         <div class ="display-label">
-            @Html.DisplayNameFor(model => model.ConfigVaga.qtdeVagas)
+            @Html.DisplayNameFor(model => model.Configuracao.qtdeVagas)
         </div>
 
         <div class ="editor-field">
-            @Html.EditorFor(model => model.ConfigVaga.qtdeVagas)
-            @Html.ValidationMessageFor(model => model.ConfigVaga.qtdeVagas)
+            @Html.EditorFor(model => model.Configuracao.qtdeVagas)
+            @Html.ValidationMessageFor(model => model.Configuracao.qtdeVagas)
         </div>
 
         <p>

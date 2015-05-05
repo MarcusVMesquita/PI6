@@ -8,9 +8,9 @@ using MyParking.DAL.Models;
 
 namespace MyParking.DAL.ViewData
 {
-    public class ConfVagaViewData
+    public class ConfiguracaoViewData
     {
-        public ConfVagas ConfigVaga { get; set; }
+        public Configuracao Configuracao { get; set; }
         public Result Result { get; set; }
     }
 }

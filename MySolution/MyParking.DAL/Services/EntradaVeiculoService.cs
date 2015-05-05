@@ -29,7 +29,7 @@ namespace MyParking.DAL.Services
         {
             try
             {
-                var m = db.configVaga.First();
+                var m = db.configuracao.First();
 
                 if (db.entradas.Count() >= m.qtdeVagas)
                     return new Result("O estacionamento está lotado", Result.TipoResult.Alert);

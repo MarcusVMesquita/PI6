@@ -8,32 +8,32 @@ using System;
 
 namespace MyParking.BLL.Controllers
 {
-    public class ConfVagaController : Controller
+    public class ConfiguracaoController : Controller
     {
-        private ConfVagasService service = new ConfVagasService();
+        private ConfiguracaoService service = new ConfiguracaoService();
 
         public ActionResult Index()
         {
-            ConfVagas data = new ConfVagas();
+            Configuracao data = new Configuracao();
             data = service.getTamanho();
             return View(data);
         }
 
         public ActionResult Edit()
         {
-            ConfVagaViewData data = new ConfVagaViewData();
+            ConfiguracaoViewData data = new ConfiguracaoViewData();
             return View(data);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(ConfVagaViewData data)
+        public ActionResult Edit(ConfiguracaoViewData data)
         {
             Result resultado = null;
 
             if (ModelState.IsValid)
             {
-                resultado = service.definirTamanho(data.ConfigVaga);
+                resultado = service.definirTamanho(data.Configuracao);
                 if (resultado.tipoResultado == Result.TipoResult.OK)
                     return RedirectToAction("Index");
             }

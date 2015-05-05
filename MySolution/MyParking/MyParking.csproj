@@ -177,8 +177,8 @@
     <Content Include="Views\EntradaVeiculo\Create.cshtml" />
     <Content Include="Views\EntradaVeiculo\Index.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
-    <Content Include="Views\ConfVaga\Edit.cshtml" />
-    <Content Include="Views\ConfVaga\Index.cshtml" />
+    <Content Include="Views\Configuracao\Edit.cshtml" />
+    <Content Include="Views\Configuracao\Index.cshtml" />
     <Content Include="Views\Usuario\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>

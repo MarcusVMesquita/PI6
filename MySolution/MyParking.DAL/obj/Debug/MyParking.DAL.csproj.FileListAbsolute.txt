@@ -41,3 +41,4 @@ C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParkin
 C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.Migrations.mig002.resources
 C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.Migrations.mig003.resources
 C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.Migrations.mig004.resources
+C:\Users\Marcus\Documents\GitHub\PI6\MySolution\MyParking.DAL\obj\Debug\MyParking.DAL.Migrations.mig0041.resources
