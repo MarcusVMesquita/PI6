@@ -19,10 +19,17 @@ namespace MyParking.BLL.Controllers
             return View(data);
         }
 
-        public ActionResult Edit()
+        public ActionResult Edit(int id = 0)
         {
-            ConfiguracaoViewData data = new ConfiguracaoViewData();
-            return View(data);
+            Configuracao conf = service.getConfById(id);
+            if (conf == null)
+                return HttpNotFound();
+            else
+            {
+                ConfiguracaoViewData data = new ConfiguracaoViewData();
+                data.Configuracao = conf;
+                return View(data);
+            }
         }
 
         [HttpPost]

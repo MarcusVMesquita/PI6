@@ -6,6 +6,7 @@ using MyParking.DAL.Models;
 using System.Threading.Tasks;
 using MyParking.Framework;
 using MyParking.DAL.Context;
+using System.Data.Entity;
 
 namespace MyParking.DAL.Services
 {
@@ -24,26 +25,50 @@ namespace MyParking.DAL.Services
                 throw;
             }
         }
-        
+
+        public Configuracao getConfById(int id = 0)
+        {
+            try
+            {
+                return db.configuracao.Find(id);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public Result definirTamanho(Configuracao novaConf)
         {
             try
             {
-                var m = db.configuracao.First();
-                
-                if ( m != null)
+                //Faz a Gravação
+                if (novaConf.id_configuracao != 0) //Esta Editando um existente
+                    db.Entry(novaConf).State = EntityState.Modified;
+                else
                 {
-                    db.configuracao.Remove(m);
                     db.configuracao.Add(novaConf);
-
-                    db.SaveChanges();
-
-                    return new Result("Tamanho do estacionamento definido com sucesso", Result.TipoResult.OK);
-          
                 }
-               
-                db.configuracao.Add(novaConf);
+
+                db.SaveChanges();
+
                 return new Result("Tamanho do estacionamento definido com sucesso", Result.TipoResult.OK);
+
+                //var m = db.configuracao.First();
+                
+                //if ( m != null)
+                //{
+                //    db.configuracao.Remove(m);
+                //    db.configuracao.Add(novaConf);
+
+                //    db.SaveChanges();
+
+                    
+          
+                //}
+               
+                //db.configuracao.Add(novaConf);
+                //return new Result("Tamanho do estacionamento definido com sucesso", Result.TipoResult.OK);
 
             }
             catch (Exception expt)

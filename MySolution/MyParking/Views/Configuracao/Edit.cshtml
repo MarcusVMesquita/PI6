@@ -14,6 +14,8 @@
     <fieldset>
         <legend> Configuração de Vaga</legend>
 
+        @Html.HiddenFor(model => model.Configuracao.id_configuracao);
+
         <div class ="display-label">
             @Html.DisplayNameFor(model => model.Configuracao.qtdeVagas)
         </div>

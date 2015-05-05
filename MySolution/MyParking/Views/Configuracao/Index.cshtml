@@ -21,7 +21,7 @@
             @Html.DisplayFor(model => model.qtdeVagas)
         </td>
         <td>
-            @Html.ActionLink("Editar Tamanho", "Edit")
+            @Html.ActionLink("Editar Tamanho", "Edit",  new { id = Model.id_configuracao })
         </td>
     </tr>
 
