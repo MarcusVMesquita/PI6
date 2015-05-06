@@ -2,52 +2,58 @@
 
 @model UsuarioViewData
 
+<link rel="stylesheet" href="~/Content/Login/Login.css">
+
 @{
     Layout = "";
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
+
 
 @using (@Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>Login</legend>
+    <fieldset class="container">
+        
+        <div class="login">
 
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.Usuario.Login)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Usuario.Login)
-            @Html.ValidationMessageFor(model => model.Usuario.Login)
-        </div>
+            <h1>MyParking Application</h1>
 
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.Usuario.Password)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Usuario.Password)
-            @Html.ValidationMessageFor(model => model.Usuario.Password)
-        </div>
-        <p>
-            <input type="submit" value="Log in" />
-        </p>
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Usuario.Login)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Usuario.Login)
+                @Html.ValidationMessageFor(model => model.Usuario.Login)
+            </div>
 
-        @if (Model != null)
-        {
-            if (Model.Resultado != null)
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Usuario.Password)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Usuario.Password)
+                @Html.ValidationMessageFor(model => model.Usuario.Password)
+            </div>
+            <p>
+                <input type="submit" value="Log in" />
+            </p>
+
+            @if (Model != null)
             {
-                if (Model.Resultado.tipoResultado != MyParking.Framework.Result.TipoResult.OK)
+                if (Model.Resultado != null)
                 {
-                    <div class="Mensagem">
-                        @Html.Partial("_Mensagem", Model.Resultado)
-                    </div>
+                    if (Model.Resultado.tipoResultado != MyParking.Framework.Result.TipoResult.OK)
+                    {
+                        <div class="Mensagem">
+                            @Html.Partial("_Mensagem", Model.Resultado)
+                        </div>
+                    }
                 }
             }
-        }
 
+        </div>
     </fieldset>
 }
