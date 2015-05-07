@@ -16,6 +16,7 @@
 
         @Html.HiddenFor(model => model.Configuracao.id_configuracao);
 
+        @*Quantidade de vagas*@
         <div class ="display-label">
             @Html.DisplayNameFor(model => model.Configuracao.qtdeVagas)
         </div>
@@ -23,6 +24,36 @@
         <div class ="editor-field">
             @Html.EditorFor(model => model.Configuracao.qtdeVagas)
             @Html.ValidationMessageFor(model => model.Configuracao.qtdeVagas)
+        </div>
+
+        @*Valor Primeira Hora*@
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Configuracao.valorPrimeiraHora)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Configuracao.valorPrimeiraHora)
+            @Html.ValidationMessageFor(model => model.Configuracao.valorPrimeiraHora)
+        </div>
+
+        @*Valor Hora Adicional*@
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Configuracao.valorHoraAdicional)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Configuracao.valorHoraAdicional)
+            @Html.ValidationMessageFor(model => model.Configuracao.valorHoraAdicional)
+        </div>
+
+        @*Valor Mensalista*@
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Configuracao.valorMensalista)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Configuracao.valorMensalista)
+            @Html.ValidationMessageFor(model => model.Configuracao.valorMensalista)
         </div>
 
         <p>

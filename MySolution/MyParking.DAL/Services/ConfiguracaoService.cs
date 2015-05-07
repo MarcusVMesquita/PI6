@@ -52,7 +52,7 @@ namespace MyParking.DAL.Services
 
                 db.SaveChanges();
 
-                return new Result("Tamanho do estacionamento definido com sucesso", Result.TipoResult.OK);
+                return new Result("Configurações do estacionamento definidas com sucesso", Result.TipoResult.OK);
 
                 //var m = db.configuracao.First();
                 
@@ -73,7 +73,7 @@ namespace MyParking.DAL.Services
             }
             catch (Exception expt)
             {
-                return new Result("Não foi possivel definir o tamanho do estacionamento" + expt.Message, Result.TipoResult.Error);
+                return new Result("Não foi possivel definir as configurações do estacionamento" + expt.Message, Result.TipoResult.Error);
             }
 
 

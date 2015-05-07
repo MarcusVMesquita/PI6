@@ -16,7 +16,7 @@ namespace MyParking.DAL.Context
         public DbSet<Usuario> usuarios { get; set; }
         public DbSet<EntradaVeiculo> entradas { get; set; }
         public DbSet<Configuracao> configuracao { get; set; }
-
+        public DbSet<SaidaVeiculo> saidas { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

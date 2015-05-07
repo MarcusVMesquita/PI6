@@ -14,10 +14,11 @@ namespace MyParking.DAL.Models
 
         [Required]
         [RegularExpression(@"^[a-zA-Z]{3}\-\d{4}$", ErrorMessage = "A placa deve estar no formato AAA-0000")]
-        [DisplayName("Placa")]
+        [DisplayName("Placa do Veículo")]
         public string PlacaVeiculo { get; set; }
 
-        //[Required]
+        [Required]
+        [DisplayName("Horario de Entrada")]
         public DateTime HorarioEntrada { get; set; } 
     }
 }

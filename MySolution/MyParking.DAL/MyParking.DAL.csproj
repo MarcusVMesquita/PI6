@@ -69,9 +69,18 @@
     <Compile Include="Migrations\201505052239469_mig0041.Designer.cs">
       <DependentUpon>201505052239469_mig0041.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505072106121_mig005.cs" />
+    <Compile Include="Migrations\201505072106121_mig005.Designer.cs">
+      <DependentUpon>201505072106121_mig005.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505072119137_mig006.cs" />
+    <Compile Include="Migrations\201505072119137_mig006.Designer.cs">
+      <DependentUpon>201505072119137_mig006.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Configuracao.cs" />
     <Compile Include="Models\EntradaVeiculo.cs" />
+    <Compile Include="Models\SaidaVeiculo.cs" />
     <Compile Include="Services\ConfiguracaoService.cs" />
     <Compile Include="Services\EntradaVeiculoService.cs" />
     <Compile Include="ViewData\ClienteViewData.cs" />
@@ -89,6 +98,7 @@
     <Compile Include="ViewData\CorViewData.cs" />
     <Compile Include="ViewData\EntradaVeiculoViewData.cs" />
     <Compile Include="ViewData\MarcaViewData.cs" />
+    <Compile Include="ViewData\SaidaVeiculoViewData.cs" />
     <Compile Include="ViewData\UsuarioViewData.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +128,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505052239469_mig0041.resx">
       <DependentUpon>201505052239469_mig0041.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505072106121_mig005.resx">
+      <DependentUpon>201505072106121_mig005.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505072119137_mig006.resx">
+      <DependentUpon>201505072119137_mig006.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

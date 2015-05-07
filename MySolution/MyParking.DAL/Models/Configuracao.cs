@@ -16,7 +16,21 @@ namespace MyParking.DAL.Models
         public int id_configuracao { get; set; }
 
         [Required(ErrorMessage = "A quantidade de vagas deve ser informada")]
-        [DisplayName("Qtde Vaga")]
+        [DisplayName("Quantidade de Vagas")]
         public int qtdeVagas { get; set; }
+
+        [Required(ErrorMessage = "O valor da Primeira Hora deve ser informado")]
+        [DisplayName("Valor da Primeira Hora")]
+        public decimal valorPrimeiraHora { get; set; }
+
+        [Required(ErrorMessage = "O valor das Demais Horas deve ser informado")]
+        [DisplayName("Valor da Hora Adicional")]
+        public decimal valorHoraAdicional { get; set; }
+
+        [Required(ErrorMessage = "O valor da Mensalista deve ser informado")]
+        [DisplayName("Valor da Mensalista")]
+        public decimal valorMensalista {get;set;}
+
+
     }
 }

@@ -8,18 +8,46 @@
 <table>
     
     <tr>
+
         <th>
             @Html.DisplayNameFor(model => model.qtdeVagas)
         </th>
+        
         <th>
+            @Html.DisplayNameFor(model => model.valorPrimeiraHora)
+        </th>
 
+        <th>
+            @Html.DisplayNameFor(model => model.valorHoraAdicional)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.valorMensalista)
+        </th>
+        
+        <th>
+            Opções
         </th>
     </tr>
 
     <tr>
+
         <td>
             @Html.DisplayFor(model => model.qtdeVagas)
         </td>
+
+        <td>
+            @Html.DisplayFor(model => model.valorPrimeiraHora)
+        </td>
+
+        <td>
+            @Html.DisplayFor(model => model.valorHoraAdicional)
+        </td>
+
+        <td>
+            @Html.DisplayFor(model => model.valorMensalista)
+        </td>
+        
         <td>
             @Html.ActionLink("Editar Tamanho", "Edit",  new { id = Model.id_configuracao })
         </td>
