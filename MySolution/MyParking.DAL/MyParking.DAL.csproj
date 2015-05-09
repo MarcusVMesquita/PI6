@@ -83,6 +83,7 @@
     <Compile Include="Models\SaidaVeiculo.cs" />
     <Compile Include="Services\ConfiguracaoService.cs" />
     <Compile Include="Services\EntradaVeiculoService.cs" />
+    <Compile Include="Services\SaidaVeiculoService.cs" />
     <Compile Include="ViewData\ClienteViewData.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\CorVeiculo.cs" />
